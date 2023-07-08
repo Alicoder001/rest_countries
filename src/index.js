@@ -47,7 +47,7 @@ await data?.forEach((item) => {
 		console.log(error);
 	}
 });
-
-app.listen('3000', () => {
+const port = process.any.PORT || 3000;
+app.listen(port, () => {
 	console.log('server started...!');
 });
