@@ -2,6 +2,7 @@
 import express from 'express';
 import { Country } from './models/Countries.model.js';
 import CountryRoutes from './routes/country.routes.js';
+import process from 'process';
 import cors from 'cors';
 import { AsiaRoutes } from './routes/asia.routes.js';
 import { AfricaRoutes } from './routes/Africa.routes.js';
@@ -47,7 +48,7 @@ await data?.forEach((item) => {
 		console.log(error);
 	}
 });
-const port = process.any.PORT || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
 	console.log('server started...!');
 });
