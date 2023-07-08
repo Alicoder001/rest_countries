@@ -1,10 +1,9 @@
 /** @format */
 
 import { Sequelize } from 'sequelize';
-const db = new Sequelize('countries', 'postgres', '1234', {
-	host: 'localhost',
-	dialect: 'postgres',
-});
+const db = new Sequelize(
+	'postgres://countries_d301_user:EfdaZhILRps16W3BFj0FMHymxaaOeJ8u@dpg-ciks6hdgkuvinfl1a38g-a.singapore-postgres.render.com/countries_d301',
+);
 db.options.logging = false;
 try {
 	await db.authenticate();
