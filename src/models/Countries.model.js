@@ -1,6 +1,6 @@
 /** @format */
 import { DataTypes } from 'sequelize';
-import db from '../Config/config.js';
+import db from '../config/config.js';
 export const Country = db.define('Country', {
 	name: DataTypes.STRING,
 	native_name: DataTypes.STRING,
