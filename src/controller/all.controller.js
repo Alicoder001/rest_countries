@@ -7,7 +7,9 @@ import { Url, paginition } from '../utils/utils.js';
 class AllCrud extends Crud {
 	getAll = async (req, res) => {
 		try {
-			let data = await Country.findAll();
+			let data = await Country.findAll({
+				order: [['id', 'ASC']],
+			});
 			data = paginition(req, data);
 			res.send(data);
 		} catch (err) {

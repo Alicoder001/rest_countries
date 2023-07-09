@@ -30,6 +30,7 @@ app.use('/update/:id', async (req, res) => {
 				where: {
 					id: id,
 				},
+				
 				order: [['id', 'ASC']],
 			},
 		);

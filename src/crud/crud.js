@@ -12,6 +12,7 @@ export class Crud {
 				where: {
 					region: this.path,
 				},
+				order: [['id', 'ASC']],
 			});
 			console.log(Country);
 			data = paginition(req, data);
@@ -57,5 +58,5 @@ export class Crud {
 		} catch (err) {
 			res.send(err);
 		}
-	};	
+	};
 }
