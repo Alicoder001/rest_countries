@@ -13,6 +13,7 @@ export class Crud {
 					region: this.path,
 				},
 			});
+			console.log(Country);
 			data = paginition(req, data);
 			res.send(data);
 		} catch (err) {
@@ -42,6 +43,7 @@ export class Crud {
 					},
 				});
 				data = paginition(req, data);
+
 				res.send(data);
 			} else {
 				const data = await Country.findAll({
@@ -52,6 +54,25 @@ export class Crud {
 				data = paginition(req, data);
 				res.send(data);
 			}
+		} catch (err) {
+			res.send(err);
+		}
+	};
+	update = async (req, res) => {
+		const id = req.params.id;
+		console.log('salom');
+		try {
+			let data = await Country.update(
+				{ name: 'assalom' },
+				{
+					where: {
+						id: id,
+					},
+				},
+			);
+			console.log('updated');
+			data = paginition(req, data);
+			res.send(data);
 		} catch (err) {
 			res.send(err);
 		}

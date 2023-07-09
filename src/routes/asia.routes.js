@@ -12,5 +12,8 @@ AsiaRoutes.get('/name/:name', (req, res) => {
 AsiaRoutes.get('/name/', (req, res) => {
 	crud.getAll(req, res);
 });
+AsiaRoutes.patch('/:id', (req, res) => {
+	crud.update(req, res);
+});
 
 
