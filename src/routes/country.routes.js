@@ -17,4 +17,5 @@ CountryRoutes.get('/name/', (req, res) => {
 	crud.getAll(req, res);
 });
 
+
 export default CountryRoutes;

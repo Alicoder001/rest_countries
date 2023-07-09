@@ -20,6 +20,25 @@ app.use('/region/americas', AmericasRoutes);
 app.use('/region/europe', EuropeRoutes);
 app.use('/region/oceania', OceaniaRoutes);
 app.use('/alfa', AlfaRoutes);
+app.use('/update/:id', async (req, res) => {
+	const id = req.params.id;
+	const { name, capital } = req.body;
+	try {
+		await Country.update(
+			{ name, capital },
+			{
+				where: {
+					id: id,
+				},
+			},
+		);
+		console.log('updated');
+
+		res.send('updated');
+	} catch (err) {
+		res.send(err);
+	}
+});
 
 // let data = [];
 // try {

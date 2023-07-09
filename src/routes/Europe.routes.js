@@ -12,3 +12,4 @@ EuropeRoutes.get('/name/:name', (req, res) => {
 EuropeRoutes.get('/name/', (req, res) => {
 	crud.getAll(req, res);
 });
+

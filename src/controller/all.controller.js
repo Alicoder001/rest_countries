@@ -4,7 +4,6 @@ import { Op } from 'sequelize';
 import { Crud } from '../crud/crud.js';
 import { Country } from '../models/Countries.model.js';
 import { Url, paginition } from '../utils/utils.js';
-
 class AllCrud extends Crud {
 	getAll = async (req, res) => {
 		try {
@@ -43,6 +42,25 @@ class AllCrud extends Crud {
 				data = paginition(req, data);
 				res.send(data);
 			}
+		} catch (err) {
+			res.send(err);
+		}
+	};
+	update = async (req, res) => {
+		const id = req.params.id;
+		const { name, capital } = req.body;
+		try {
+			let data = await Country.update(
+				{ name, capital },
+				{
+					where: {
+						id: id,
+					},
+				},
+			);
+			console.log('updated');
+			data = paginition(req, data);
+			res.send(data);
 		} catch (err) {
 			res.send(err);
 		}

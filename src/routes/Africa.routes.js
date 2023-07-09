@@ -12,3 +12,4 @@ AfricaRoutes.get('/name/:name', (req, res) => {
 AfricaRoutes.get('/name/', (req, res) => {
 	crud.getAll(req, res);
 });
+
