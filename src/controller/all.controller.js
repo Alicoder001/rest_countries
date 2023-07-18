@@ -13,10 +13,11 @@ class AllCrud extends Crud {
 			data = paginition(req, data);
 			res.cookie('salom', 'hayr', {
 				maxAge: 1000 * 3600 * 24 * 2,
-				httpOnly: true,				
+				httpOnly: true,
 				secure: true,
-				path:'/all'
+				path: '/all',
 			});
+		
 			res.send(data);
 		} catch (err) {
 			res.send(err);
