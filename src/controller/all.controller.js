@@ -17,7 +17,9 @@ class AllCrud extends Crud {
 				secure: true,
 				path: '/all',
 			});
-		
+			res.header('Access-Control-Allow-Origin', '*');
+			res.header('Access-Control-Allow-Credentials', true);
+			res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 			res.send(data);
 		} catch (err) {
 			res.send(err);
