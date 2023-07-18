@@ -12,6 +12,11 @@ import { OceaniaRoutes } from './routes/Oceania.routes.js';
 import { AlfaRoutes } from './routes/alfa.routes.js';
 import cookieParser from 'cookie-parser';
 const app = express();
+app.use(
+	express.urlencoded({
+		extended: true,
+	}),
+);
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors());
