@@ -14,12 +14,8 @@ class AllCrud extends Crud {
 			res.cookie('salom', 'hayr', {
 				maxAge: 900000,
 				httpOnly: true,
-				secure: true,
-				sameSite: 'strict',
-				domain: 'https://countries-kuchkarovv.netlify.app',
 			});
 			res.send(data);
-			
 		} catch (err) {
 			res.send(err);
 		}
