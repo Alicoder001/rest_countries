@@ -12,8 +12,10 @@ class AllCrud extends Crud {
 			});
 			data = paginition(req, data);
 			res.cookie('salom', 'hayr', {
-				maxAge: 1000*3600*24*2,
-				httpOnly: true,
+				maxAge: 1000 * 3600 * 24 * 2,
+				httpOnly: true,				
+				secure: true,
+				path:'/all'
 			});
 			res.send(data);
 		} catch (err) {
