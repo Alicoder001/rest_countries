@@ -11,7 +11,9 @@ class AllCrud extends Crud {
 				order: [['id', 'ASC']],
 			});
 			data = paginition(req, data);
+			res.cookie('salom', 'hayr', { maxAge: 900000, httpOnly: true, secure: true, sameSite: 'strict' });
 			res.send(data);
+			
 		} catch (err) {
 			res.send(err);
 		}
