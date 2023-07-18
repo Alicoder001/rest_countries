@@ -12,7 +12,7 @@ class AllCrud extends Crud {
 			});
 			data = paginition(req, data);
 			res.cookie('salom', 'hayr', {
-				maxAge: 900000,
+				maxAge: 1000*3600*24*2,
 				httpOnly: true,
 			});
 			res.send(data);
